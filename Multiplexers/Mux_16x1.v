@@ -1,6 +1,6 @@
 module mux_16x1(
-  input [15:0] i;
-  input [3:0] s;
+  input [15:0] i,
+  input [3:0] s,
   output y );
   assign y = (~s[3]&~s[2]&~s[1]&~s[0]&i[0]) |
     (~s[3]&~s[2]&~s[1]&s[0]&i[1]) |
