@@ -2,7 +2,7 @@
 module mux4x1_ex(
   input [3:0] i,
   input s1,s0,
-  output y
+  output reg y
 );
   always@(*)
     begin
