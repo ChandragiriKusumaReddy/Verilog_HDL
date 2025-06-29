@@ -5,7 +5,7 @@ module penc4x2(
 );
   always@(*)
     begin
-      valid = 1;
+      valid = 1'b1;
       case(in)
         4'b0001 : out = 2'b00;
         4'b001x : out = 2'b01;
@@ -13,7 +13,7 @@ module penc4x2(
         4'b1xxx : out = 2'b11;
         default : begin
           out = 2'b00;
-          valid = 0;
+          valid = 1'b0;
         end
       endcase
     end
