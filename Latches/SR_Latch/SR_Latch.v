@@ -1,3 +1,22 @@
+module sr_latch (
+  input S, R,
+  output reg Q, Qn
+);
+  always @ (S or R) begin
+    if (S == 1 && R == 0)
+      Q = 1;
+    else if (S == 0 && R == 1)
+      Q = 0;
+    else if (S == 0 && R == 0)
+      Q = Q; // Hold
+    else
+      Q = 1'bx; // Invalid
+    Qn = ~Q;
+  end
+endmodule
+
+
+
 //Gate-level modeling
 module sr_latch_gate(
   input s,r,
