@@ -16,7 +16,6 @@ module sr_latch (
 endmodule
 
 
-
 //Gate-level modeling
 module sr_latch_gate(
   input s,r,
