@@ -1,9 +1,9 @@
 module d_ff_tb();
   reg clk,rst,d;
-  wire q;
+  wire q,qn;
 
-  d_ff_synchronous DUT(.clk(clk), .rst(rst), .d(d), .q(q));
- //d_ff_async DUT(.clk(clk), .rstn(rstn), .d(d), .q(q));
+  d_ff_synchronous DUT(.clk(clk), .rst(rst), .d(d), .q(q), .qn(qn));
+  //d_ff_async DUT(.clk(clk), .rstn(rstn), .d(d), .q(q), .qn(qn));
     initial begin
         $monitor("Time=%0t | D=%b CLK=%b RST=%b | Q=%b Qn=%b", $time, d, clk, rst, q, qn);
         d = 0; clk = 0; rst = 1;
