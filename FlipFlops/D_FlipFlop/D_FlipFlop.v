@@ -3,8 +3,10 @@ module d_fliflop_synchronous(
     input clk,
     input rst,
     input d,
-    output reg q
+    output reg qn,
+    output q
 );
+    assign qn=~q;
     always@(posedge clk ) begin
         if(rst)
             q<=0;
