@@ -1,7 +1,7 @@
 module down_counter(
   input clk,
   input rst,
-  output [3:0] count
+  output reg [3:0] count
 );
   always@(posedge clk or posedge rst)
     begin
