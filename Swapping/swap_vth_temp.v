@@ -1,14 +1,21 @@
-module swap_temp;
-  int a=5,b=10,temp;
+module swap_with_temp;
+  reg [3:0] a, b, temp;
+
   initial begin
-    $display("Before Swap the values are a = %0d, b = %0d",a,b);
+    a = 4'd9;   // Example: 1001
+    b = 4'd4;   // Example: 0100
+
+    $display("Before Swap: a = %d, b = %d", a, b);
+
     temp = a;
     a = b;
     b = temp;
-    $display("After Swap the values are a = %0d,b = %0d",a,b);
+
+    $display("After Swap:  a = %d, b = %d", a, b);
   end
 endmodule
 
+
 //Output:
-# KERNEL: Before Swap the values are a = 5, b = 10
-# KERNEL: After Swap the values are a = 10,b = 5
+# KERNEL: Before Swap: a =  9, b =  4
+# KERNEL: After Swap:  a =  4, b =  9
